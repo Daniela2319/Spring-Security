@@ -10,6 +10,6 @@ import org.springframework.data.repository.query.Param;
 * */
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    @Query("SELET e FROM User e JOIN FETCH e.roles WHERE e.username= (:username)" )
+    @Query("SELET e FROM User e JOIN FETCH e.roles WHERE e.username= (:username)")
     public User findByUsername(@Param("username") String username);
 }
